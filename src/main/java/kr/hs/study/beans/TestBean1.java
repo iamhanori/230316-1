@@ -20,6 +20,21 @@ public class TestBean1 {
         this.data3 = "spring1";
     }
 
+    public TestBean1(double data2) {
+        System.out.println("TestBean1의 double형 데이터 갖는 생성자");
+        this.data1 = 2;
+        this.data2 = data2;
+        this.data3 = "spring2";
+
+    }
+
+    public TestBean1(String data3) {
+        System.out.println("TestBean1의 string형 데이터 갖는 생성자");
+        this.data1 = 3;
+        this.data2 = 3.3;
+        this.data3 = data3;
+    }
+
     // prData method
     public void prData() {
         System.out.println("data1 : " + data1);
