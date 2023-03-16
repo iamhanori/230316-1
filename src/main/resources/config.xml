@@ -9,6 +9,8 @@
 	                    http://www.springframework.org/schema/context/spring-context-5.0.2.xsd
 	                    http://www.springframework.org/schema/aop
 	                    http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
     <bean id="t1" class="kr.hs.study.beans.TestBean1" lazy-init="true"/>
     <bean id="t2" class="kr.hs.study.beans.TestBean1" lazy-init="true">
         <constructor-arg value="1" type="int"/>
@@ -20,5 +22,20 @@
         <constructor-arg value="Summer" type="String"/>
     </bean>
 
+    <bean id="t5" class="kr.hs.study.beans.TestBean2" lazy-init="true">
+        <!-- 매개변수 1, 2 -->
+        <constructor-arg>
+            <bean id="d1" class="kr.hs.study.beans.DataBean"/>
+        </constructor-arg>
+        <constructor-arg>
+            <bean id="d2" class="kr.hs.study.beans.DataBean"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="d2" class="kr.hs.study.beans.DataBean"/>
+    <bean id="t6" class="kr.hs.study.beans.TestBean2">
+        <constructor-arg ref="d2"/>
+        <constructor-arg ref="d2"/>
+    </bean>
 
 </beans>
